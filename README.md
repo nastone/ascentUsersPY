@@ -10,8 +10,20 @@ Instructions:
 Firstly, you must have the following python version and packages installed on your local machine:
 
 -Python3.*
+
+
+
+
 -pip (package manager for python packages)
+
+
+
+
 -requests library package
+
+
+
+
 -xlrd (ExcelFile read) package
 
 If you do not have these requirements met, please reach out to Riley and he'll help you get these set up!
