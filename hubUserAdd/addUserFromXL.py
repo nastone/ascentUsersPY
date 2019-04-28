@@ -6,14 +6,17 @@ from sys import exit
 username = input('Username>> ')
 userPassword = input('Password>> ')
 
-apiKey = input('APIKEY>> ')
 domain = input('Https domain name>> ')
+apiKey = input('APIKEY>> ')
+
 
 filePath = input('Past ABSOLUTE file path her for the excel sheet>> ')
 
 
 login = req.post(f'https://{domain}/attask/api/v10.0/login?username={username}&password={userPassword}')
 
+
+# example of a filepath for an excel sheet downloaded for Ascent
 # /Users/rileyrohloff/Downloads/Quicken Loans Wip.xls
 
 

@@ -4,8 +4,10 @@ from random import randint
 
 username = input('Username>> ')
 userPassword = input('Password>> ')
+
+domain = input('Https domain name>> ')
 apiKey = input('APIKEY>> ')
-domain = input('Https domain>> ')
+
 
 
 login = req.post(f'https://{domain}/attask/api/v10.0/login?username={username}&password={userPassword}')
