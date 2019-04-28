@@ -3,11 +3,23 @@ import requests as req
 import json
 from sys import exit
 
-apiKey = input('APIKEY>>  ')
-domain = input('DOMAIN>>  ')
+username = input('Username>> ')
+userPassword = input('Password>> ')
+
+apiKey = input('APIKEY>> ')
+domain = input('Https domain name>> ')
+
+filePath = input('Past ABSOLUTE file path her for the excel sheet>> ')
 
 
-loc =("/Users/rileyrohloff/Downloads/Quicken Loans Wip.xls")
+login = req.post(f'https://{domain}/attask/api/v10.0/login?username={username}&password={userPassword}')
+
+# /Users/rileyrohloff/Downloads/Quicken Loans Wip.xls
+
+
+loc =(filePath)
+
+
 
 
 userFirstNames = []
@@ -44,7 +56,7 @@ for index, item in enumerate(userEmail):
     query = userExistQuery
 
 
-    # print(query['data'])
+
 
 
 
@@ -57,16 +69,15 @@ for index, item in enumerate(userEmail):
                     'emailAddr':userEmail[index],
                     'firstName':userFirstNames[index],
                     'lastName':userLastNames[index],
-                    'accessLevelID':'56f9863f000fa04b86ccb8f51fb73211',
-                    'homeGroupID':'5354d12a001f7b9e8c3f027c727dddb0',
-                    'companyID':'4f70af2b000072ad140ec40ea11ea20b',
+                    'accessLevelID':'7870b41da37bc546e0530a093a0abcf7',
+                    'homeGroupID':'5bc8b11500553010367a0ad802d291ff',
                     'password':'Password1'
                     }
         create_call = req.post(f"https://{domain}/attask/api/v10.0/user?updates={updates}&apiKey={apiKey}")
-
+        success = create_call.json()
     if index % 50 == 0:
         print(f"{index} users checked\n")
-        print(query)
+        print(success)
 
 
 
