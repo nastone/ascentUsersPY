@@ -41,7 +41,7 @@ sheet.cell_value(1,0)
 #
 # print(sheet.row_values(1))
 
-for i in range(1, sheet.nrows):
+for i in range(0, sheet.nrows):
     userFirstNames.append(sheet.cell_value(i,0))
     userLastNames.append(sheet.cell_value(i,1))
     userEmail.append(sheet.cell_value(i,3))
@@ -72,8 +72,8 @@ for index, item in enumerate(userEmail):
                     'emailAddr':userEmail[index],
                     'firstName':userFirstNames[index],
                     'lastName':userLastNames[index],
-                    'accessLevelID':'7870b41da37bc546e0530a093a0abcf7',
-                    'homeGroupID':'5bc8b11500553010367a0ad802d291ff',
+                    'accessLevelID':'5b15908a008d092956e407e313f6fae4',
+                    'homeGroupID':'5b9534860397593c6ee5fdbe2b578ede',
                     'password':'Password1'
                     }
         create_call = req.post(f"https://{domain}/attask/api/v10.0/user?updates={updates}&apiKey={apiKey}")

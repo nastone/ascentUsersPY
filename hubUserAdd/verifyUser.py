@@ -29,7 +29,7 @@ data = jsonResponse
 for item in data['data']:
     userIDs.append(item['emailAddr'])
 
-print(userIDs)
+
 
 
 
@@ -39,7 +39,6 @@ if len(userIDs) != 0:
         verify = req.post(f"https://{domain}/resetPassword?username={item}&oldpassword=Password1&newpassword=Password1&temporary=true")
         if index % 50 == 0:
             print(f"{index} out of {len(userIDs)} verified\n\n")
-    print(f'Success! {index} Users password is Password1')            
+    print(f'Success! {len(userIDs)} Users password is Password1')
 else:
     print('No users detected to have been entered in $$TODAY')
-
