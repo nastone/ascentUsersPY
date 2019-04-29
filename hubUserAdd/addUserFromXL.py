@@ -9,6 +9,8 @@ userPassword = input('Password>> ')
 domain = input('Https domain name>> ')
 apiKey = input('APIKEY>> ')
 
+print("Past ABSOLUTE file path her for the excel sheet")
+print('ex: /Users/rileyrohloff/Downloads/Quicken Loans Wip.xls')
 
 filePath = input('Past ABSOLUTE file path her for the excel sheet>> ')
 
@@ -72,8 +74,8 @@ for index, item in enumerate(userEmail):
                     'emailAddr':userEmail[index],
                     'firstName':userFirstNames[index],
                     'lastName':userLastNames[index],
-                    'accessLevelID':'5b15908a008d092956e407e313f6fae4',
-                    'homeGroupID':'5b9534860397593c6ee5fdbe2b578ede',
+                    'accessLevelID':'7870b41da37bc546e0530a093a0abcf7',
+                    'homeGroupID':'5bc8b11500553010367a0ad802d291ff',
                     'password':'Password1'
                     }
         create_call = req.post(f"https://{domain}/attask/api/v10.0/user?updates={updates}&apiKey={apiKey}")
